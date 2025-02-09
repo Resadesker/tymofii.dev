@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tymofii Nosov - Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Montserrat&display=swap&subset=latin,cyrillic" rel="stylesheet">
+  <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      color: #222;
+      margin-bottom: 1rem;
+    }
+    a {
+      color: #2575fc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    a:hover {
+      color: #6a11cb;
+    }
+    
+    header {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    .profile-photo {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #ddd;
+    }
+    
+    /* Main Content Container */
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .section {
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeIn 0.8s forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Typewriter Greeting */
+    #greeting {
+      font-size: 1.5rem;
+      font-weight: 700;
+      min-height: 2.4rem;
+      margin-bottom: 1rem;
+      /* blinking cursor */
+      border-right: 2px solid #2575fc;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    
+    /* Bullet Lists */
+    ul.stichpunkte {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul.stichpunkte li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 0.75rem;
+      opacity: 0;
+      transform: translateX(-20px);
+      animation: slideIn 0.5s forwards;
+    }
+    ul.stichpunkte li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #2575fc;
+      font-weight: bold;
+    }
+    /* animation delays */
+    ul.stichpunkte li:nth-child(1) { animation-delay: 0.2s; }
+    ul.stichpunkte li:nth-child(2) { animation-delay: 0.4s; }
+    ul.stichpunkte li:nth-child(3) { animation-delay: 0.6s; }
+    ul.stichpunkte li:nth-child(4) { animation-delay: 0.8s; }
+    ul.stichpunkte li:nth-child(5) { animation-delay: 1s; }
+    ul.stichpunkte li:nth-child(6) { animation-delay: 1.2s; }
+    
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    /* Languages Section */
+    #languages h2 {
+      margin-bottom: 1rem;
+    }
+    .language-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .language-name {
+      width: 150px;
+      font-size: 0.95rem;
+    }
+    .progress-container {
+      flex: 1;
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      height: 10px;
+      overflow: hidden;
+      margin-left: 1rem;
+    }
+    .progress {
+      height: 100%;
+      width: 0;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      animation: loadBar 2s forwards;
+    }
+    @keyframes loadBar {
+      to { width: var(--target-width); }
+    }
+    
+    /* Contact Section */
+    #contact h2 {
+      margin-bottom: 1rem;
+    }
+    #contact p {
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      border-top: 1px solid #ddd;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+      }
+      .profile-photo {
+        margin-top: 1rem;
+      }
+      .language-name {
+        width: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tymofii Nosov</h1>
+    <img src="avatar.png" alt="Tymofii's Photo" class="profile-photo">
+  </header>
+
+  <main>
+    <div id="greeting"></div>
+    
+    <p>I am Tim, a Software Developer and a Data Science enthusiast studying at HTL Dornbirn in Austria, Vorarlberg.</p>
+    
+    <br>
+    <section id="work" class="section">
+      <h2>Work Experience</h2>
+      <ul class="stichpunkte">
+        <li>
+          <strong>Intern - Software Developer</strong> at Rhomberg Bau Gruppe (8 weeks, Jul 2024 – Aug 2024 in Bregenz, Vorarlberg, Austria)
+          <br><em>Flutter Web &amp; Mobile App Development, Data Analytics from Q-tainer for automated construction site (machine & environmental data) supervision</em>
+        </li>
+        <li>
+          <strong>Intern - Data Scientist</strong> at Rhomberg Bau Gruppe (6 weeks, Jul 2023 – Aug 2023 in Bregenz, Vorarlberg, Austria)  
+          <br><em>Developed an AI for soil report analysis, implemented OCR &amp; data collection from large texts and a chatbot for the data. Worked on data-driven security analytics, analyzed login attacks and verified 2FA usage</em>
+        </li>
+      </ul>
+    </section>
+
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <ul class="stichpunkte">
+        <li>
+          <strong>HTL Dornbirn</strong> (Sep 2022 – Jul 2027)  
+          <br><em>High School Diploma in Business Informatics (Wirtschaftsingenieur Betriebsinformatik) – Grade 9 to 13</em>
+        </li>
+        <li>
+          <strong>Mittelschule Zwischenwasser</strong> (Mar 2022 – Jul 2022)  
+          <br><em>Middle School Diploma (Grade 8, Activities: French)</em>
+        </li>
+        <li>
+          <strong>Lyceum № 10 in Marhanets, Ukraine</strong> (Sep 2014 – Jun 2023)  
+          <br><em>Primary &amp; Middle School specialized in Mathematics (Grades 1 to 9)</em>
+          <br><em>Last grade done online due to war in Ukraine.</em>
+        </li>
+      </ul>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects &amp; Extracurriculars</h2>
+      <ul class="stichpunkte">
+        <li>
+          <strong>Austrian Olympiad in Informatics</strong> (2024 & 2025) in Vienna, Austria
+          <br>One of 40 selected participants to attend a 10 days DSA course at TU Wien by former IOI participants and TU professors in both 2024 and 2025.
+          <br>Created with consulting of Caritas Werkstätten & Lebenshilfe Vorarlberg.
+          <br>I managed a team of 3 people and was a React Native Developer.
+          <br>1st place & Best Design Award at InnoDays 2024 Social Innovation.
+        </li> 
+        <li>
+          <strong>Botball</strong> (2025-2026) - part of my school's robotics team
+          <br>One of 5 team members, responsible for OpenCV and high-level software design.
+          <br>Electronics and wireless communication enthusiast - side projects with the team.
+          <br>Participant in the upcoming Botball 2025 Innsbruck competition.
+        </li>
+        <li>
+          <strong>IncluNet</strong> (2024-2025) - Software Developer & Team Lead
+          <br>A social network concept for disabled & illiterate people.
+          <br>Created with consulting of Caritas Werkstätten & Lebenshilfe Vorarlberg.
+          <br>I managed a team of 3 people and was a React Native Developer.
+          <br>1st place & Best Design Award at InnoDays 2024 Social Innovation.
+          <br>Project created by my school's "Entrepreneuship" club members.
+        </li>
+        <li>
+          <strong>Austrian Olympiad in Mathematics</strong> (2025-2027)
+          <br>Mathematics enthusiast.
+          <br>Maths Olympiad school course participant, student representative of the school's maths club.
+        </li>
+        <li>
+          <strong>Countryballs: Evolution</strong> (2024) - Software Developer & Team Lead
+          <br>A mobile game covering all historical eras of Greece. A lot of history research was put into it! 
+          <br>I managed a team of 5 people and was the only Unity Developer.
+          <br>Download <a href="https://play.google.com/store/apps/details?id=com.Fruxel.CountryballsEvolution" target="_blank">here</a>.
+        </li>
+        <li>
+          <strong>YouTuber</strong> (2021) - Game Development
+          <br>In 2021, I grew my Youtube channel <a href="https://www.youtube.com/@resadesker" target="_blank">"Resadesker"</a> to 18.000 subscribers as a hobby.
+          <br>I turned it into a source of passive income and gained some business and marketing experience.
+        </li>
+      </ul>
+    </section>
+
+    <section id="languages" class="section">
+      <h2>Languages</h2>
+      <div class="language-item">
+        <div class="language-name">Russian (Native)</div>
+        <div class="progress-container">
+          <div class="progress" style="--target-width: 100%;"></div>
+        </div>
+      </div>
+      <div class="language-item">
+        <div class="language-name">Ukrainian (Native)</div>
+        <div class="progress-container">
+          <div class="progress" style="--target-width: 100%;"></div>
+        </div>
+      </div>
+      <div class="language-item">
+        <div class="language-name">English (C1)</div>
+        <div class="progress-container">
+          <div class="progress" style="--target-width: 100%;"></div>
+        </div>
+      </div>
+      <div class="language-item">
+        <div class="language-name">German (C1)</div>
+        <div class="progress-container">
+          <div class="progress" style="--target-width: 100%;"></div>
+        </div>
+      </div>
+      <div class="language-item">
+        <div class="language-name">French (B1)</div>
+        <div class="progress-container">
+          <div class="progress" style="--target-width: 60%;"></div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="hobbies" class="section">
+      <h2>Hobbies</h2>
+      <p>In my free time, I enjoy hiking, learning languages and looking for new challenges.</p>
+      <p>Wanna spend 2 weeks walking to Italy across the mountains? I'm in!</p>
+    </section>
+    
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:contact@tymofii.dev">contact@tymofii.dev</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/tymofii-nosov" target="_blank">My LinkedIn</a></p>
+      <p>GitHub: <a href="https://github.com/Resadesker" target="_blank">My GitHub</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tymofii Nosov. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const greetings = ["Hello!", "Hallo!", "Привіт!", "Salut!", "Servus!", "Привет!"];
+    let currentGreetingIndex = 0;
+    let currentCharIndex = 0;
+    const greetingElement = document.getElementById("greeting");
+
+    function typeGreeting() {
+      const currentGreeting = greetings[currentGreetingIndex];
+      if (currentCharIndex < currentGreeting.length) {
+        greetingElement.textContent += currentGreeting.charAt(currentCharIndex);
+        currentCharIndex++;
+        setTimeout(typeGreeting, 120);
+      } else {
+        setTimeout(() => {
+          greetingElement.textContent = "";
+          currentCharIndex = 0;
+          currentGreetingIndex = (currentGreetingIndex + 1) % greetings.length;
+          setTimeout(typeGreeting, 300);
+        }, 2000);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", typeGreeting);
+  </script>
+</body>
+</html>
